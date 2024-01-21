@@ -1,0 +1,15 @@
+{% macro render_memes(memes, page) %}
+    {% for meme in memes %}
+        {% if loop.last %}
+            <div class="meme" hx-get="/memes/{{page+1}}" hx-trigger="revealed" hx-swap="afterend">
+                <img src="{{ meme.url }}" alt="{{ meme.name }}">
+                <h3>{{ meme.name }}</h3>
+            </div>
+        {% else %}
+        <div class="meme">
+            <img src="{{ meme.url }}" alt="{{ meme.name }}">
+            <h3>{{ meme.name }}</h3>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

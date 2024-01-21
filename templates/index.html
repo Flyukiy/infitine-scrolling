@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scrolling with HTMX</title>
+    <script src="/static/htmx.min.js"></script>
+</head>
+
+<style>
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .meme {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+    }
+
+    .meme img {
+        width: 200px;
+        height: 200px;
+    }
+</style>
+
+<body>
+    <!-- Load the macro from render_memes.html -->
+    {% from "helpers.html" import render_memes %}
+    <div class="main">
+        <h3>Infinite Scrolling with HTMX</h1>
+        {{ render_memes(memes, page) }}
+    </div>
+</body>
+</html>

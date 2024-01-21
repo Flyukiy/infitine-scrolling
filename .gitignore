@@ -1,0 +1,7 @@
+# Ignore all cached files
+*.pyc
+*.pyo
+*.DS_Store
+
+# Pycache
+__pycache__
